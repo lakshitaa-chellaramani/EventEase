@@ -12,6 +12,7 @@ const cors = require("cors");
 
 // Initialize our server
 const app = express();
+app.use(cors());
 //To access the data user inputs in form.
 app.use(express.urlencoded({ extended: false }));
 //just a bolierplate code, tells our express server to add the user submitted data to request object.
@@ -21,7 +22,7 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 app.use("/", routes);
 
-app.use(cors());
+
 
 
 
